@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EXAMEN_SEGUNDO_PARCIAL.VIEWS.infoVacunas"
+             xmlns:local="clr-namespace:EXAMEN_SEGUNDO_PARCIAL.VIEWMODELS"
+             Title="Vacunas"
+             IconImageSource="VACUNAS.PNG">
+    
+    <ContentPage.BindingContext>
+
+        <local:ViewModelMedicamentos></local:ViewModelMedicamentos>
+
+    </ContentPage.BindingContext>
+
+
+    <ContentPage.Content>
+
+        <StackLayout>
+
+            <StackLayout Padding="5">
+
+                <Picker Title=" Tipo de Vacuna" FontSize="20" 
+
+                    TitleColor="White"  SelectedItem="{Binding Medicamentos}">
+
+                    <Picker.ItemsSource>
+
+                        <x:Array Type="{x:Type x:String}">
+
+                            <x:String>Covid-19</x:String>
+
+                            <x:String>Varicela</x:String>
+
+                            <x:String>DTPa</x:String>
+
+                            <x:String>Hepatitis A</x:String>
+
+                            <x:String>Hepatitis B</x:String>
+
+                            <x:String>Fiebre Amarilla</x:String>
+
+                            <x:String>Tdap</x:String>
+
+                            <x:String>Rotavirus</x:String>
+
+                            <x:String>Triple Viral</x:String>
+
+                        </x:Array>
+
+                    </Picker.ItemsSource>
+
+                </Picker>
+
+
+                <Label Text="Fecha de primera Aplicacion" FontSize="20"/>
+
+                <DatePicker Date="{Binding Hora}"></DatePicker>
+
+                
+                <Label Text="Dosis" FontSize="20"/>
+
+                <Entry Keyboard="Numeric" Text="{Binding Dosis}"/>
+                
+
+                <Label Text="Lugar de aplicacion" FontSize="20"></Label>
+
+                <Entry Text="{Binding Lugar_aplicacion}" ></Entry>
+
+
+                <Button Text="Guardar" Command="{Binding ControlMedicamentos}"></Button>
+
+                <Button Text="Limpiar" Command="{Binding Limpiar}"/>
+
+
+
+                <Label Text="{Binding Guardar}" FontSize="15"/>
+
+
+
+            </StackLayout>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+
+</ContentPage> 

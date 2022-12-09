@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EXAMEN_SEGUNDO_PARCIAL.VIEWS.infoMedicamentos"
+             xmlns:local="clr-namespace:EXAMEN_SEGUNDO_PARCIAL.VIEWMODELS"
+             Title ="Medicamentos"
+             IconImageSource="MEDICAMENTOS.PNG">
+
+    <ContentPage.BindingContext>
+
+
+        <local:ViewModelMedicamentos></local:ViewModelMedicamentos>
+
+
+    </ContentPage.BindingContext>
+
+
+    <ContentPage.Content>
+
+        <StackLayout>
+
+            <StackLayout Padding="5">
+
+                <Picker Title=" Tipo de Medicamentos" FontSize="20" 
+
+                    TitleColor="White"  SelectedItem="{Binding Medicamentos}">
+
+                    <Picker.ItemsSource>
+
+                        <x:Array Type="{x:Type x:String}">
+
+                            <x:String>Paracetamol</x:String>
+
+                            <x:String>Ibuprofeno</x:String>
+
+                            <x:String>Esomeprazol</x:String>
+
+                            <x:String>Acido Acetil Salicilico</x:String>
+
+                            <x:String>Amoxicilina</x:String>
+
+                            <x:String>Ranitidina</x:String>
+
+                            <x:String>Diclofenaco</x:String>
+
+                            <x:String>Lorazepam</x:String>
+
+                        </x:Array>
+
+                    </Picker.ItemsSource>
+
+                </Picker>
+
+
+
+                <Label Text="Dosis" FontSize="20"/>
+
+                <Entry Keyboard="Numeric" Text="{Binding Dosis}"/>
+
+
+
+                <Label Text="Horario" FontSize="20"></Label>
+
+                <TimePicker Time="{Binding Horario}" ></TimePicker>
+
+
+
+                <Label Text="Duracion del Tratamiento" FontSize="20"/>
+
+                <DatePicker Date="{Binding Hora}"></DatePicker>
+
+
+
+                <Button Text="Guardar" Command="{Binding ControlMedicamentos}"></Button>
+
+                <Button Text="Limpiar" Command="{Binding Limpiar}"/>
+
+
+
+                <Label Text="{Binding Guardar}" FontSize="20"/>
+
+
+
+
+
+            </StackLayout>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+
+</ContentPage> 
